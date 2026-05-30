@@ -1,0 +1,17 @@
+services:
+  minecraft:
+    container_name: minecraft
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+    volumes:
+      - minecraft:/data
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+volumes:
+  minecraft:
+
